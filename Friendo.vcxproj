@@ -29,6 +29,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{265BABFD-CFCE-4133-9107-D08D5CE8F778}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,10 +79,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Users\ittai\source\libraries\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\ittai\source\libraries\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)Builds\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Builds\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\Users\ittai\source\libraries\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\ittai\source\libraries\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)Builds\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Builds\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
