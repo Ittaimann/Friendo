@@ -20,9 +20,14 @@ int main(int argc, char* argv[])
     {
         while (result && !quit)
         {
-            //Update the surface
-            SDL_UpdateWindowSurface(instance.getWindow());
-            //Handle events on queue
+            SDL_RenderClear(instance.getRenderer());
+
+            //Render texture to screen
+            SDL_RenderCopy(instance.getRenderer(), lol.getTexture(), NULL, NULL);
+
+            //Update screen
+            SDL_RenderPresent(instance.getRenderer());
+
             while (SDL_PollEvent(&e) != 0)
             {
                 //User requests quit

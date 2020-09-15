@@ -1,5 +1,7 @@
 #include <iostream>
 #include "SDLInit.h"
+
+//TODO: clean up this a little bit formating wise
 SDLInit::SDLInit()
 {
     mWindow = nullptr;
@@ -10,7 +12,6 @@ SDLInit::~SDLInit()
 {
 
 }
-
 // initialize the sdl.
 bool SDLInit::init(const int width, const int height)
 {
@@ -35,10 +36,15 @@ bool SDLInit::init(const int width, const int height)
             mScreenSurface = SDL_GetWindowSurface(mWindow);
 
             mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED);
+
             if (mRenderer == NULL)
             {
                 printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
                 result = false;
+            }
+            else
+            {
+                SDL_SetRenderDrawColor(mRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
             }
         }
     }
