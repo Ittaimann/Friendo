@@ -4,6 +4,7 @@ SDLInit::SDLInit()
 {
     mWindow = nullptr;
     mScreenSurface = nullptr;
+    mRenderer = nullptr;
 }
 SDLInit::~SDLInit()
 {
@@ -32,6 +33,13 @@ bool SDLInit::init(const int width, const int height)
         {
             //Get window surface
             mScreenSurface = SDL_GetWindowSurface(mWindow);
+
+            mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED);
+            if (mRenderer == NULL)
+            {
+                printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
+                result = false;
+            }
         }
     }
 	return result;
@@ -39,6 +47,7 @@ bool SDLInit::init(const int width, const int height)
 
 void SDLInit::cleanup()
 {
+    SDL_DestroyRenderer(mRenderer);
     SDL_DestroyWindow(mWindow);
     SDL_Quit();
 }
@@ -50,4 +59,10 @@ SDL_Window* SDLInit::getWindow()
 SDL_Surface* SDLInit::getScreenSurface()
 {
     return mScreenSurface;
+}
+SDL_Renderer* SDLInit::getRenderer()
+{
+    // this might need to be treated as a high priority.
+    // seems like this is straight up the renderer >:(
+    return mRenderer;
 }

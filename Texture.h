@@ -9,7 +9,7 @@ public:
 	Texture();
 	~Texture();
 
-	bool init(const std::string& path);
+	bool init(SDL_Renderer* renderer, const std::string& path);
 	void cleanup();
 
 	SDL_Texture* getTexture();
