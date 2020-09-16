@@ -15,6 +15,7 @@ public:
 	SDL_Window* getWindow();
 	SDL_Surface* getScreenSurface();
 	SDL_Renderer* getRenderer(); // This seems like it might need to be a singleton?
+
 private:
 	SDL_Window* mWindow;
 	SDL_Surface* mScreenSurface;
