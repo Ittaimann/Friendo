@@ -80,14 +80,14 @@
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\ittai\source\libraries\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\ittai\source\libraries\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)3rdParty\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)3rdParty\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Builds\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Builds\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\ittai\source\libraries\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\ittai\source\libraries\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)3rdParty\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)3rdParty\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Builds\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Builds\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
